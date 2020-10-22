@@ -40,7 +40,7 @@ export class ComPort {
         this.port = await navigator.serial.requestPort();
         // - Wait for the port to open.
         this.log("Openning port...");
-        await this.port.open({ baudrate: baudrate });
+        await this.port.open({ baudRate: baudrate });
         // CODELAB: Add code to read the stream here.
         const decoder = new TextDecoderStream();
         this.inputDone = this.port.readable.pipeTo(decoder.writable);
